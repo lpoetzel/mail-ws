@@ -1,6 +1,3 @@
-# Send mail using Node.js, Express.js with Nodemailer
-- https://medium.com/coox-tech/send-mail-using-node-js-express-js-with-nodemailer-93f4d62c83ee
-
 # Setting up Nodemailer to add emailing function on an App
 
 This workshop will show you how to setting up Nodemailer on the Wild Code School template. You will be able to send an email from an user form.
