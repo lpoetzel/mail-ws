@@ -81,7 +81,7 @@ class ItemController {
       });
   };
 
-  static sendMail = (req, res) => {
+  static sendEmail = (req, res) => {
     const { name, surname, phone, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({

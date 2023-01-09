@@ -23,7 +23,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5005/SendEmail", data)
+      .post("http://localhost:5005/sendEmail", data)
       .then((res) => {
         console.warn(res);
       })
@@ -35,28 +35,30 @@ function App() {
 
   return send === false ? (
     <div>
-      <h1>Formulaire d'envoi de message</h1>
+      <h1>Contact Form</h1>
       <form>
-        <label htmlFor="name">Nom:</label>
+        <label htmlFor="name">Name:</label>
         <input onChange={(e) => handleChange(e)} type="text" name="name" />
-        <label htmlFor="surname">Prénom:</label>
+        <label htmlFor="surname">surname:</label>
         <input onChange={(e) => handleChange(e)} type="text" name="surname" />
-        <label htmlFor="phone">Téléphone:</label>
+        <label htmlFor="phone">Phone:</label>
         <input onChange={(e) => handleChange(e)} type="text" name="phone" />
         <label htmlFor="email">Email:</label>
         <input onChange={(e) => handleChange(e)} type="email" name="email" />
         <label htmlFor="message">Message:</label>
         <textarea onChange={(e) => handleChange(e)} name="message" />
         <button onClick={(e) => handleSubmit(e)} type="button">
-          Envoyer
+          Send
         </button>
       </form>
     </div>
   ) : (
     <div className="merci">
-      <h1>Merci pour l'envoi de votre message !</h1>
-      <p>Nous prendrons contact avec vous très rapidement...</p>
-      <button type="button">Retour à l'accueil</button>
+      <h1>Thanks for your message !</h1>
+      <p>we will come back to you very soon...</p>
+      <button onClick={() => setSend(false)} type="button">
+        Back to home
+      </button>
     </div>
   );
 }
